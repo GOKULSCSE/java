@@ -1,0 +1,25 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class numbers 
+{
+    int a= Integer.MIN_VALUE;
+    int b= Integer.MIN_VALUE;
+    void value(int[] arr){
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>a){
+                b=a;
+                a=arr[i];
+            }
+            else if(arr[i]>b && arr[i]!=a){
+                b=arr[i];
+            }
+        }
+         System.out.print(b);
+    }
+    public static void main(String[] args) {
+        int[] arr={33,55,88,1,44};
+        numbers v1 = new numbers();
+        v1.value(arr);
+    }
+}

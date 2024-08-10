@@ -1,0 +1,26 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class reversearray {
+    int[] numbers;
+    int start;
+    int end;
+    void reverse( int[] numbers){
+        while(start<end){
+            int temp=numbers[start];
+            numbers[start]=numbers[end];
+            numbers[end]=temp;
+            start++;
+            end--;
+        }
+        System.out.println(Arrays.toString(numbers));
+        
+    }
+    public static void main(String[] args) {
+        reversearray a1 = new reversearray();
+        int[] numbers = {2,3,2,3,4};
+        a1.start=0;
+        a1.end=numbers.length-1;
+        a1.reverse(numbers);
+    }
+}

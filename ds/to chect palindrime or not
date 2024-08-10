@@ -1,0 +1,19 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class numbers{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String name=sc.nextLine();
+        int start=0;
+        int end = name.length()-1;
+        while(start<end){
+            if(name.charAt(start) != name.charAt(end)){
+                System.out.print("this is not pali");
+            }
+            start++;
+            end--;
+        }
+    }
+    System.out.print("this is a palindrome");
+}

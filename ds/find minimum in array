@@ -1,0 +1,19 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class minimum {
+    void value(int[] arr){
+        int min=arr[0];
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]<min){
+                min=arr[i];
+            }
+        }
+        System.out.print(min); 
+    }
+    public static void main(String[] args) {
+        int[] arr={5,6,3,7,2,1};
+        minimum v1 = new minimum();
+       v1.value(arr);
+    }
+}

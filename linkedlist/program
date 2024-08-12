@@ -10,15 +10,7 @@ private static class ListNode{
         this.next=null;
     }
 }
-    void count(){//count the listnode
-        int count=0;
-        ListNode current = head;
-        while(current!=null){
-            count++;
-            current=current.next;
-        }
-        System.out.println(count);
-    }
+
    public void display(){ //display the ListNode
         ListNode current = head;
         while(current!=null){
@@ -27,47 +19,32 @@ private static class ListNode{
         }
         System.out.println("null");
     }
-    public void insertfirst(int value){//insert the firstNode
-        ListNode newNode = new ListNode(value);
-        newNode.next=head;
-        head=newNode;
-    }
-    public void insertlast(int value){//insert the last
-        ListNode newNode = new ListNode(value);
-        if(head == null){
-            head=newNode;
-            return;
-        }
-        ListNode current = head;
-        while(null!=current.next){
-            current=current.next;
-        }
-        current.next=newNode;
-        
-    }
-        
- 
+   public void insertvalue(int position,int value){
+       ListNode node = new ListNode(value);
+       if(position == 1){
+           node.next=head;
+           head=node;
+       }else{
+           ListNode previous = head;
+           int count=1;
+           
+           while(count<position-1){
+               previous = previous.next;
+               count++;
+           }
+           ListNode current=previous.next;
+           previous.next=node;
+           node.next=current;
+    
+       }
+       
+   }
 public static void main(String[] args){
     singlelinkedlist sll = new singlelinkedlist();
-     /*sll.head=new ListNode(10);
-    /*ListNode second =new ListNode(1);
-    ListNode third =new ListNode(5);
-    ListNode fourth =new ListNode(6);
-    
-    sll.head.next=second;
-    second.next=third;
-    third.next=fourth;
-    
-    sll.display(); 
-    sll.count();*/
-     sll.insertfirst(6);
-    sll.insertfirst(5);
-    sll.insertfirst(8);
-    sll.display(); 
-    
-    sll.insertlast(6);
-    sll.insertlast(5);
-    sll.insertlast(8);
+    sll.insertvalue(1,4);
+     sll.insertvalue(2,5);
+      sll.insertvalue(1,6);
+       sll.insertvalue(2,3);
     sll.display();
 
 }
